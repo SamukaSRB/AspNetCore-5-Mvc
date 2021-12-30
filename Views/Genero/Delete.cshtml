@@ -1,0 +1,28 @@
+@model FilmsJust.Models.Genero
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Você deseja mesmo apagar esse genero ?</h3>
+<div>
+    <h4>Genero</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GeneroNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GeneroNome)
+        </dd>
+              
+      
+    </dl>    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="GeneroId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

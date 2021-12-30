@@ -1,0 +1,64 @@
+@model FilmsJust.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cep" class="control-label"></label>
+                <input asp-for="Cep" class="form-control" />
+                <span asp-validation-for="Cep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label"></label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Cpf" class="control-label"></label>
+                <input asp-for="Cpf" class="form-control" />
+                <span asp-validation-for="Cpf" class="text-danger"></span>
+            </div>         
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,56 @@
+@model FilmsJust.Models.Filme
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Alteração</h1>
+
+<h4>Filme</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Nome</label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Descrição</label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Laçamento</label>
+                <input asp-for="DataLancamento" class="form-control" />
+                <span asp-validation-for="DataLancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneroId" class="control-label"></label>
+                <select asp-for="GeneroId" class="form-control" asp-items="@(new SelectList(@ViewBag.Generos, "GeneroId","GeneroNome"))">
+                </select> 
+                </div>   
+             <div class="form-group">
+                <label class="control-label">Imagem</label>
+                <input asp-for="Imagem" type="file" class="form-control" />
+                <span asp-validation-for="Imagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Preço</label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>       
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

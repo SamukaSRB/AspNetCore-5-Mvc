@@ -1,0 +1,49 @@
+@model FilmsJust.Models.Filme
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Filme</h1>
+<div>   
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-2">
+          Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+             Sinopse 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            Gênero
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero.GeneroNome)
+        </dd>
+        <dt class = "col-sm-2">
+        Imagem
+        </dt>            
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataLancamento)
+        </dd>
+        <dt class = "col-sm-2">
+        Preço
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+           
+    </dl>
+</div>
+<div>
+    @* <a asp-action="Edit" asp-route-id="@Model.FilmeId">Edit</a> | *@
+    <a asp-action="Index">Comprar</a>
+    <a asp-action="Index">Back to List</a>
+</div>

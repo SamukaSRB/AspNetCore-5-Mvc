@@ -1,0 +1,56 @@
+@model FilmsJust.Models.Filme
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Você deseja mesmo apagar esse filme?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            Descrição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+         <dt class = "col-sm-2">
+           Laçamento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataLancamento)
+        </dd>
+        <dt class = "col-sm-2">
+        Gênero
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class = "col-sm-2">
+        Imagem
+        </dt>
+        <dd class = "col-sm-10">
+              <img src="@Url.Content(Model.Imagem)" alt="" /> 
+        </dd>
+        <dt class = "col-sm-2">
+        Preço
+        </dt> 
+          <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>    
+    </dl>    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FilmeId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

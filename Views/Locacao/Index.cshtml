@@ -1,0 +1,43 @@
+@model IEnumerable<FilmsJust.Models.Filme>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Filmes</h1>
+<table class="table">
+    <thead>
+        <tr>
+        <th>Imagens</th>
+        <th>Nome</th>
+        <th>Sinopse</th>          
+        <th>Gênero</th>         
+        <th>Preço</th>      
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+               <img src="@Url.Content(item.Imagem)" class="img-thumbnail rounded-lg" height="128" width="128"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero.GeneroNome)
+            </td>              
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>        
+            <td>
+                <a asp-action="Venda" asp-route-id="@item.FilmeId">Adquirir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

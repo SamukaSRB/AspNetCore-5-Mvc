@@ -1,0 +1,42 @@
+@model IEnumerable<FilmsJust.Models.Genero>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Todos os generos</h1>
+
+<p>
+    <a asp-action="NovoGenero">Cadastrar um novo gênero</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneroId)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.GeneroNome)
+            </th>          
+                      
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneroId)
+            </td>  
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneroNome)
+            </td>           
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GeneroId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.GeneroId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
