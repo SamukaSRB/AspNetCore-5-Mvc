@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmsJust.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211229132829_Initial")]
+    [Migration("20220105135829_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,7 +111,9 @@ namespace FilmsJust.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("GeneroNome")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("GeneroId");
 

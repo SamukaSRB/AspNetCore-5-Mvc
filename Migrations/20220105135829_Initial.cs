@@ -33,7 +33,7 @@ namespace FilmsJust.Migrations
                 {
                     GeneroId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    GeneroNome = table.Column<string>(type: "text", nullable: true)
+                    GeneroNome = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {

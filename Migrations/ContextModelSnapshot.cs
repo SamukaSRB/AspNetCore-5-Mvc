@@ -109,7 +109,9 @@ namespace FilmsJust.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("GeneroNome")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("GeneroId");
 
